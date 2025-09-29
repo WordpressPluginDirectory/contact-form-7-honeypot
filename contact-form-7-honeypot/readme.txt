@@ -1,8 +1,8 @@
 === CF7 Apps – [Honeypot and hCAPTCHA for Contact Form 7] ===
-Tags: contact form, anti-spam, spam protection, captcha, honeypot
+Tags: anti-spam, spam protection, captcha, honeypot, cf7 database
 Requires at least: 4.8
 Tested up to: 6.8
-Stable tag: 3.1.0
+Stable tag: 3.1.1
 Requires PHP: 5.6
 Contributors: wpexpertsio
 License: GPLv2 or later
@@ -30,6 +30,9 @@ Right out of the box, CF7 Apps includes:
 
 And that’s just the beginning.
 
+🌟 **Save and Manage CF7 Form Submissions**
+The Entries Database App stores all Contact Form 7 submissions directly to your WordPress database. Easily filter entries by form or date, view individual CF7 submissions, and export or delete them when needed. This ensures you never lose important leads or messages, even if emails fail to deliver.
+
 🌟 **Add a Honeypot Field to Prevent Spam**
 
 Our **Honeypot Contact Form 7 extension** creates a hidden field inside your Contact Form 7 forms. Real users never see it, but bots do—and that's how the bots fall for the trap. It blocks automated spam before it even hits your inbox.
@@ -46,6 +49,7 @@ The best thing is that both features work independently. You can run them alone 
 With the CF7 Apps, you can do the following:
   ✔️ Trap bots using a honeypot field without affecting users
   ✔️ Add hCaptcha to Contact Form 7 for privacy-first anti-spam
+  ✔️ Store and manage Contact Form 7 entries directly in WordPress
 
 ==Why Should You Install CF7 Apps?==
 
@@ -107,6 +111,19 @@ You sure can, and many users have indicated this helps stop even more spam, as i
 
 Yep! See the **Installation** section for more details and [this Gist](https://gist.github.com/nocean/953b1362b63bd3ecf68c) for examples.
 
+= Does Contact Form 7 save form submissions by default? =
+
+No, Contact Form 7 does not store submissions by default. With the CF7 Apps Entries Database App, you can log every entry directly in your WordPress dashboard and access them anytime.
+
+= Can I filter Contact Form 7 entries by form or date? =
+
+Yes, the Entries Database App lets you filter submissions by specific forms or date ranges, making it easier to manage and review the entries you need.
+
+= How do I delete Contact Form 7 entries? =
+
+You can delete individual submissions or bulk delete multiple entries directly from the Entries tab in the CF7 Apps dashboard with just a few clicks.
+
+
 = Where do I report security bugs found in this plugin? =
 
 Please report security bugs found in the source code of the CF7 Apps – [Honeypot and hCAPTCHA for Contact Form 7] plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/e58fd0b7-60aa-4ba8-aeeb-61889936d10c). The Patchstack team will assist you with verification, CVE assignment, and notify the developers of this plugin.
@@ -125,11 +142,18 @@ CF7 Apps is a third-party plugin and is not officially associated with or endors
 
 == Changelog ==
 
+= 3.1.1 - September 29, 2025 =
+* IMPROVEMENT – Added Collapse Icon On CF7 Apps All Apps Menu
+* IMPROVEMENT - Added validation on CF7 Apps Installation before Contact Form 7
+* FIX – Database Entries Pagination was not working in some cases 
+* FIX - PHP error when upgrading from older versions
+* FIX - Database Entries tab was not visible in some cases
+
 = 3.1.0 - September 17, 2025 =
 * NEW - Introducing Database Entries.
 * IMPROVEMENT - Moved CF7 Apps under Contact Form 7.
 
-= 3.0.1 - Sep 02, 2025 =
+= 3.0.1 - September 02, 2025 =
 * Code Optimization
 
 = 3.0.0 - July 16, 2025 =
