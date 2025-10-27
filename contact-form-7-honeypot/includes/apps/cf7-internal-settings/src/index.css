@@ -1,9 +1,6 @@
-@import "~react-date-range/dist/styles.css";
-@import "~react-date-range/dist/theme/default.css";
-
 @font-face {
     font-family: degular;
-    src: url(/assets/fonts/degular-14/Degular-Regular.otf);
+    src: url(../../../../assets/fonts/degular-14/Degular-Regular.otf);
 }
 
 :root {
@@ -82,11 +79,11 @@
 .components-button.is-secondary.is-busy:disabled,
 .components-button.is-secondary.is-busy[aria-disabled="true"] {
     background-image: linear-gradient(
-        -45deg,
-        var(--cf7apps-tertiary-color-2) 33%,
-        var(--cf7apps-tertiary-color) 0,
-        var(--cf7apps-tertiary-color) 70%,
-        var(--cf7apps-tertiary-color-2) 0
+            -45deg,
+            var(--cf7apps-tertiary-color-2) 33%,
+            var(--cf7apps-tertiary-color) 0,
+            var(--cf7apps-tertiary-color) 70%,
+            var(--cf7apps-tertiary-color-2) 0
     );
     background-size: 100px 100%;
     animation: cf7apps-loading-stripes 1s linear infinite;
@@ -108,11 +105,11 @@
 .cf7apps-btn.tertiary-secondary.is-busy:disabled,
 .cf7apps-btn.tertiary-secondary.is-busy[aria-disabled="true"] {
     background-image: linear-gradient(
-        -45deg,
-        var(--cf7apps-tertiary-color-11) 33%,
-        var(--cf7apps-primary-white) 0,
-        var(--cf7apps-primary-white) 70%,
-        var(--cf7apps-tertiary-color-11) 0
+            -45deg,
+            var(--cf7apps-tertiary-color-11) 33%,
+            var(--cf7apps-primary-white) 0,
+            var(--cf7apps-primary-white) 70%,
+            var(--cf7apps-tertiary-color-11) 0
     );
     background-size: 100px 100%;
     animation: cf7apps-loading-stripes 1s linear infinite;
@@ -134,11 +131,13 @@
     clear: both;
 }
 
-#wpbody {
+#cf7apps-root {
     font-family: degular !important;
+    background: #ebf4f8;
+    margin: 20px 0 30px 0;
 }
 
-a, 
+a,
 button {
     text-decoration: none;
 }
@@ -146,14 +145,6 @@ button {
 a:focus,
 button:focus {
     box-shadow: none;
-}
-
-#wpwrap {
-    background: #ebf4f8;
-}
-
-#wpcontent {
-    padding: 0;
 }
 
 .cf7apps-main-content {
@@ -237,7 +228,6 @@ button:focus {
     width: auto;
     border-radius: 10px;
     flex-grow: 1;
-    min-height: 800px;
 }
 
 .cf7apps-body-loading {
@@ -345,7 +335,7 @@ button:focus {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     margin-bottom: 30px;
 }
 
@@ -499,7 +489,7 @@ button:focus {
 
 .cf7apps-app-setting-section .MuiTabPanel-root {
     padding: 30px 5px;
-    width: 600px;
+    max-width: 600px;
 }
 
 .cf7apps-form {
@@ -514,7 +504,7 @@ button:focus {
 .cf7apps-form h3,
 .cf7apps-form .cf7apps-help-text {
     margin: 0;
-} 
+}
 
 .cf7apps-form .cf7apps-help-text {
     color: #4F5E7B;
@@ -639,7 +629,7 @@ select.cf7apps-form-input {
 .cf7apps-toast-notification .Toastify__toast--success {
     border-left: 3px solid #3E6654;
     background: #e7fff4;
-    
+
 }
 
 .Toastify__toast--success {
@@ -812,15 +802,84 @@ select.cf7apps-form-input {
     color: #218BAC !important;
 }
 
-.cf7apps-spam-count {
-    margin-top: 25px;
-}
-
-.cf7apps-spam-count .cf7apps-notice-info {
-    border: none !important;
-    text-align: center;
-}
-
 select.cf7apps-form-input {
     color: #2271b1 !important;
+}
+
+/* Blur Effect Styles for Disabled Apps */
+.cf7apps-settings-content-wrapper {
+    position: relative;
+}
+
+.cf7apps-disabled-content {
+    filter: blur(1px);
+    pointer-events: none;
+}
+
+.cf7apps-enabled-content {
+    filter: none;
+    pointer-events: auto;
+}
+
+.cf7apps-disabled-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(1px);
+}
+
+.cf7apps-disabled-message {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    max-width: 400px;
+    margin: 20px;
+}
+
+.cf7apps-disabled-icon {
+    color: #f0ad4e;
+    margin-bottom: 20px;
+}
+
+.cf7apps-disabled-message h3 {
+    margin: 0 0 16px 0;
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.cf7apps-disabled-message p {
+    margin: 0 0 24px 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.cf7apps-enable-button {
+    background: var(--cf7apps-primary-color) !important;
+    border-color: var(--cf7apps-primary-color) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    padding: 12px 24px !important;
+    border-radius: 6px !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    transition: all 0.2s ease !important;
+}
+
+.cf7apps-enable-button:hover {
+    background: var(--cf7apps-primary-color-2) !important;
+    border-color: var(--cf7apps-primary-color-2) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(32, 138, 174, 0.3) !important;
 }
