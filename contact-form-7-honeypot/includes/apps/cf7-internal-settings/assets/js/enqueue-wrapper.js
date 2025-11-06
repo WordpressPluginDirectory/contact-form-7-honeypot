@@ -1,4 +1,27 @@
 ( function( $ ) {
+//     // Prevent false "Changes you made may not be saved" warnings
+//     // This runs immediately when the script loads, before React Router initializes
+//     // The issue: React Router's HashRouter blocks first navigation attempt on CF7 edit page
+    ( function() {
+        let isFirstNavigation = true;
+        
+        const preventFirstWarning = function( e ) {
+            // Only prevent the warning on the FIRST navigation attempt
+            // This matches the user's experience - warning only on first click
+            if ( isFirstNavigation ) {
+                isFirstNavigation = false;
+                e.stopImmediatePropagation();
+                e.stopPropagation();
+                e.returnValue = '';
+                return '';
+            }
+            // For subsequent navigations, allow normal behavior
+        };
+        
+        // Use capture phase to intercept BEFORE React Router's handlers
+        window.addEventListener( 'beforeunload', preventFirstWarning, true );
+    } )();
+
     $( '#contact-form-editor' ).append(
         `<div id="cf7apps-root" class="cf7apps-internal-settings"></div>`
     );
