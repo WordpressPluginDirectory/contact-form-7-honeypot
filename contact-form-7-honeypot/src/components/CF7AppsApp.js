@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 
 const CF7AppsApp = ({ settings }) => {
     const [isEnabled, setIsEnabled] = useState(false);
+    const [iconSrc, setIconSrc] = useState( settings.icon || ( CF7Apps && CF7Apps.assetsURL ? `${CF7Apps.assetsURL}/images/logo.png` : '' ) );
 
     useEffect(() => {
         setIsEnabled(settings.is_enabled);
@@ -42,10 +43,16 @@ const CF7AppsApp = ({ settings }) => {
                 <div className="cf7apps-app-container">
                     <div className="cf7apps-app-header">
                         <div>
-                            <img 
-                                src={settings.icon} 
-                                alt={settings.title} 
-                                height={28} 
+                            <img
+                                src={ iconSrc }
+                                alt={ settings.title }
+                                height={ 28 }
+                                onError={ () => {
+                                    const fallback = ( CF7Apps && CF7Apps.assetsURL ) ? `${CF7Apps.assetsURL}/images/logo.png` : '';
+                                    if ( iconSrc !== fallback ) {
+                                        setIconSrc( fallback );
+                                    }
+                                } }
                                 style={ isEnabled ? { filter: 'none' } : { filter: 'grayscale(100%)' } }
                             />
                         </div>

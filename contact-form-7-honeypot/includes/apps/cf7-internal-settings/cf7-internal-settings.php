@@ -56,11 +56,17 @@ if ( ! class_exists( 'CF7Apps_Internal_Settings_Apps' ) ) :
                 }
                 $options                 = get_option( 'cf7apps_settings' );
                 $redirection_app_enabled = false;
+                $webhook_app_enabled     = false;
 
                 if ( ! empty( $options ) ) {
                     if ( isset( $options['cf7-redirection'] ) ) {
                         if ( isset( $options['cf7-redirection']['is_enabled'] ) && $options['cf7-redirection']['is_enabled'] ) {
                             $redirection_app_enabled = true;
+                        }
+                    }
+                    if ( isset( $options['webhook'] ) ) {
+                        if ( isset( $options['webhook']['is_enabled'] ) && $options['webhook']['is_enabled'] ) {
+                            $webhook_app_enabled = true;
                         }
                     }
                 }
@@ -74,6 +80,7 @@ if ( ! class_exists( 'CF7Apps_Internal_Settings_Apps' ) ) :
                     'cf7appsWrapperObjects',
                     array(
                         'cf7appsRedirectionEnabled' => $redirection_app_enabled,
+                        'cf7appsWebhookEnabled'     => $webhook_app_enabled,
                     )
                 );
 

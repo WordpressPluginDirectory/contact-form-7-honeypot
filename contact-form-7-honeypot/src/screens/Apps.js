@@ -20,6 +20,22 @@ const Apps = () => {
         fetchApps();
     }, []);
 
+    const normalizeParent = (parent) => String(parent || '').toLowerCase().replace( /\s+/g, '-' );
+
+    const renderAppsFor = (key) => {
+        if ( ! apps || ! Array.isArray( apps ) ) {
+            return null;
+        }
+
+        return apps.map( ( app, idx ) => {
+            if ( normalizeParent( app.parent_menu ) === key ) {
+                return <CF7AppsApp key={ app.id || idx } settings={ app } />;
+            }
+
+            return null;
+        } );
+    };
+
     return (
         <div className="cf7apps-body">
             <div className="cf7apps-apps-header">
@@ -50,41 +66,30 @@ const Apps = () => {
                                         <CF7AppsSkeletonLoader width="100%" height={250} />
                                     </div>
                                 </> :
-                                Object.keys( apps ).map( appIndex => {
-                                    return (
-                                        <>
-                                            {
-                                                'general' === String( apps[ appIndex ].parent_menu ).toLowerCase().replace( ' ', '-' )
-                                                && <CF7AppsApp settings={ apps[ appIndex ] } />
-                                            }
-                                        </>
-                                    )
-                                } )
+                                renderAppsFor( 'general' )
                         }
                     </div>
 
                     <h2>{ __( 'Spam Protection Apps', 'cf7apps' ) }</h2>
                     <div className="cf7apps-apps-container">
                         {
-                            isLoading
-                            ?
-                            <>
-                                <div className="cf7apps-app">
-                                    <CF7AppsSkeletonLoader width="100%" height={250} />
-                                </div>
-                                <div className="cf7apps-app">
-                                    <CF7AppsSkeletonLoader width="100%" height={250} />
-                                </div>
-                                <div className="cf7apps-app">
-                                    <CF7AppsSkeletonLoader width="100%" height={250} />
-                                </div>
-                            </>
-                            :
-                            Object.keys(apps).map((appIndex) => {
-                                return ( 
-                                    apps.length - appIndex == 1 ? 
-                                    <>
-                                        <CF7AppsApp settings={apps[appIndex]} /> 
+                            isLoading ?
+                                <>
+                                    <div className="cf7apps-app">
+                                        <CF7AppsSkeletonLoader width="100%" height={250} />
+                                    </div>
+                                    <div className="cf7apps-app">
+                                        <CF7AppsSkeletonLoader width="100%" height={250} />
+                                    </div>
+                                    <div className="cf7apps-app">
+                                        <CF7AppsSkeletonLoader width="100%" height={250} />
+                                    </div>
+                                </> :
+                                <>
+                                    { renderAppsFor( 'spam-protection' ) }
+
+                                    {/* Coming soon card always last in spam protection */}
+                                    { ! isLoading && (
                                         <a href="https://cf7apps.com/submit-idea/?utm_source=plugin&utm_medium=apps&utm_campaign=click_to_submit_your_idea" target="_blank" className="cf7apps-app cf7apps-app-coming-soon">
                                             <div style={{ padding: 0 }}>
                                                 <img 
@@ -101,18 +106,27 @@ const Apps = () => {
                                                 { __( 'Your idea!', 'cf7apps' ) }
                                             </h1>
                                         </a>
-                                    </>
-                                    :
-                                        (
-                                            <>
-                                                {
-                                                    'spam-protection' === String( apps[ appIndex ].parent_menu ).toLowerCase().replace( ' ', '-' )
-                                                    && <CF7AppsApp settings={ apps[ appIndex ] } />
-                                                }
-                                            </>
-                                        )
-                                )                                  
-                            })
+                                    ) }
+                                </>
+                        }
+                    </div>
+                    
+                    <h2>{ __( 'Integration', 'cf7apps' ) }</h2>
+                    <div className="cf7apps-apps-container">
+                        {
+                            isLoading ?
+                                <>
+                                    <div className="cf7apps-app">
+                                        <CF7AppsSkeletonLoader width="100%" height={250} />
+                                    </div>
+                                    <div className="cf7apps-app">
+                                        <CF7AppsSkeletonLoader width="100%" height={250} />
+                                    </div>
+                                    <div className="cf7apps-app">
+                                        <CF7AppsSkeletonLoader width="100%" height={250} />
+                                    </div>
+                                </> :
+                                renderAppsFor( 'integration' )
                         }
                     </div>
                 </div>

@@ -2,7 +2,7 @@
 Tags: anti-spam, spam protection, captcha, honeypot, cf7 database
 Requires at least: 4.8
 Tested up to: 6.8
-Stable tag: 3.2.1
+Stable tag: 3.3.0
 Requires PHP: 5.6
 Contributors: wpexpertsio
 License: GPLv2 or later
@@ -27,6 +27,7 @@ Right out of the box, CF7 Apps includes:
 ✅ **hCaptcha App**
 ✅ **Database Entries App**
 ✅ **Redirection App**
+✅ **Webhook App**
 💡 **[Suggest a Feature](https://cf7apps.com/submit-idea/?utm_source=wp_org&utm_medium=readme&utm_campaign=suggest_a_feature)**
 
 And that’s just the beginning.
@@ -51,7 +52,8 @@ With the CF7 Apps, you can do the following:
   ✔️ Trap bots using a honeypot field without affecting users
   ✔️ Add hCaptcha to Contact Form 7 for privacy-first anti-spam
   ✔️ Store and manage Contact Form 7 entries directly in WordPress
-
+  ✔️ Redirect your Contact Form 7 submissions to any internal or external page.
+ ✔️ Send your form data to any third-party service or custom endpoint through our Webhook.
 ==Why Should You Install CF7 Apps?==
 
 * Works exclusively with Contact Form 7
@@ -93,40 +95,40 @@ For examples of the above, please see this [recipe Gist](https://gist.github.com
 
 == Frequently Asked Questions ==
 
-=How do I add hCaptcha to Contact Form 7?=
+= How do I add hCaptcha to Contact Form 7? =
 Activate the hCaptcha App inside CF7 Apps, enter your site keys, error messages, and save settings. That’s it. Now, you’ll see the hCaptcha tag in your Contact Form 7 form settings.
 
-=What is Contact Form 7?=
+= What is Contact Form 7? =
 Contact Form 7 is a long-standing WordPress plugin that lets you build and manage contact forms on your site. It supports multiple forms, customization, and various integrations—all without writing any code.
 
-=Will CF7 Apps slow down my site?=
+= Will CF7 Apps slow down my site? =
 No. Each addon works independently. You only activate the features you want. That keeps your website fast and your backend clean.
 
-=How do I report a security issue?=
+= What is the Redirection App? =
+The Redirection App allows you to redirect users to any internal or external page after they submit a Contact Form 7 form. You can easily set custom redirection URLs per form creating smooth user flows without adding any custom code.
+
+= What is the Webhook App? =
+The Webhook App enables you to send your Contact Form 7 form data to any third-party service or custom endpoint. It makes integrations simple by allowing you to push form submissions to CRMs, marketing tools, automation platforms, or any external API without coding.
+
+= How do I report a security issue? =
 If you discover a security vulnerability, please report it to us via the [official Support Channel.](https://wordpress.org/support/plugin/contact-form-7-honeypot) Our team will review, verify, and fix all security-related reports responsibly.
 
 = Can I use more than one Honeypot field in my forms? =
 You sure can, and many users have indicated this helps stop even more spam, as it increases your chances that a bot will get caught in the trap. Just make sure each Honeypot field has a unique name.
 
 = Can I modify the HTML that this plugin outputs? =
-
 Yep! See the **Installation** section for more details and [this Gist](https://gist.github.com/nocean/953b1362b63bd3ecf68c) for examples.
 
 = Does Contact Form 7 save form submissions by default? =
-
 No, Contact Form 7 does not store submissions by default. With the CF7 Apps Entries Database App, you can log every entry directly in your WordPress dashboard and access them anytime.
 
 = Can I filter Contact Form 7 entries by form or date? =
-
 Yes, the Entries Database App lets you filter submissions by specific forms or date ranges, making it easier to manage and review the entries you need.
 
 = How do I delete Contact Form 7 entries? =
-
 You can delete individual submissions or bulk delete multiple entries directly from the Entries tab in the CF7 Apps dashboard with just a few clicks.
 
-
 = Where do I report security bugs found in this plugin? =
-
 Please report security bugs found in the source code of the CF7 Apps – [Honeypot and hCAPTCHA for Contact Form 7] plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/e58fd0b7-60aa-4ba8-aeeb-61889936d10c). The Patchstack team will assist you with verification, CVE assignment, and notify the developers of this plugin.
 
 = Disclaimer =
@@ -142,6 +144,11 @@ CF7 Apps is a third-party plugin and is not officially associated with or endors
 5. CF7 Apps Tags.
 
 == Changelog ==
+
+= 3.3.0 – Decmber 10 2025 =
+* NEW: Introduced the Webhook App.
+* IMPROVEMENT: Added the enable toggle on individual form settings.
+* IMPROVEMENT: Added compatibility for Global and Individial settings.
 
 = 3.2.1 - November 06, 2025 =
 * NEW - Added Feedback SDK.
