@@ -175,7 +175,7 @@ class CF7Apps_hCaptcha_App extends CF7Apps_App {
                         'type'              => 'text',
                         'required'          => true,
                         'required_message'  => __( 'Site key is required.', 'cf7apps' ),
-                        'description'       => __( 'Enter your site key. Don\'t have one? <a href="https://dashboard.hcaptcha.com/sites">Click here</a> to generate a new key.', 'cf7apps' ),
+                        'description'       => __( 'Enter your site key. Don\'t have one? <a href="https://dashboard.hcaptcha.com/sites" target="_blank">Click here</a> to generate a new key.', 'cf7apps' ),
                         'class'             => 'xl'
                     ),
                     'secret_key'  =>  array(
@@ -183,7 +183,7 @@ class CF7Apps_hCaptcha_App extends CF7Apps_App {
                         'type'              => 'text',
                         'required'          => true,
                         'required_message'  => __( 'Secret key is required.', 'cf7apps' ),
-                        'description'       => __( 'Enter your secret key. Don\'t have one? <a href="https://dashboard.hcaptcha.com/settings/secrets">Click here</a> to generate a new key.', 'cf7apps' ),
+                        'description'       => __( 'Enter your secret key. Don\'t have one? <a href="https://dashboard.hcaptcha.com/settings/secrets" target="_blank">Click here</a> to generate a new key.', 'cf7apps' ),
                         'class'             => 'xl'
                     ),
                     'invalid_message' =>  array(

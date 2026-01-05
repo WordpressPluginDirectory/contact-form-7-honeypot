@@ -87,26 +87,6 @@ const Apps = () => {
                                 </> :
                                 <>
                                     { renderAppsFor( 'spam-protection' ) }
-
-                                    {/* Coming soon card always last in spam protection */}
-                                    { ! isLoading && (
-                                        <a href="https://cf7apps.com/submit-idea/?utm_source=plugin&utm_medium=apps&utm_campaign=click_to_submit_your_idea" target="_blank" className="cf7apps-app cf7apps-app-coming-soon">
-                                            <div style={{ padding: 0 }}>
-                                                <img 
-                                                    src={`${CF7Apps.assetsURL}/images/more-apps-coming-soon.png`} 
-                                                    alt='More Apps Coming soon!' 
-                                                    className="more-apps-coming-soon" 
-                                                    width='100%' 
-                                                    style={{ verticalAlign: 'middle', marginTop: '10px' }} 
-                                                />
-                                            </div>
-                                            <h1 className="cf7apps-coming-soon">
-                                                { __( 'Click to submit', 'cf7apps' ) }
-                                                <br />
-                                                { __( 'Your idea!', 'cf7apps' ) }
-                                            </h1>
-                                        </a>
-                                    ) }
                                 </>
                         }
                     </div>

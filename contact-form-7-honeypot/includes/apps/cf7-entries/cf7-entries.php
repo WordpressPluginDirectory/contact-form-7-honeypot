@@ -102,8 +102,11 @@ if ( ! class_exists( 'CF7Apps_Entries_App' ) && class_exists( 'CF7Apps_App' ) ) 
 
 			$entry = new CF7Apps_Form_Entries();
 
-			$entry->form_id   = $form->id();
-			$entry->form_name = $form->name();
+			$entry->form_id = $form->id();
+
+			// Use the latest form title from the database to avoid stale names like "Untitled".
+			$form_title = get_the_title( $form->id() );
+			$entry->form_name = $form_title ? $form_title : $form->name();
 			$entry->email     = $submission->get_posted_data( 'your-email' ) ?: $submission->get_posted_data( 'email' );
 			$entry->date_time = current_time( 'timestamp' );
 			$entry->data      = $data;
@@ -140,10 +143,10 @@ if ( ! class_exists( 'CF7Apps_Entries_App' ) && class_exists( 'CF7Apps_App' ) ) 
                             'notice'           => array(
                                 'type'  => 'notice',
                                 'class' => 'info',
-                                'text'  => sprintf(
-                                    __( 'Stuck? Check our Documentation on %s', 'cf7apps' ),
-                                    '<a href="https://cf7apps.com/docs/general/entries"><u>' . __( 'Entries', 'cf7apps' ) . '</u></a>'
-                                ),
+								'text'  => sprintf(
+									__( 'Stuck? Check our Documentation on %s', 'cf7apps' ),
+									'<a href="https://cf7apps.com/docs/general/entries" target="_blank" rel="noopener noreferrer"><u>' . __( 'Entries', 'cf7apps' ) . '</u></a>'
+								),
                             ),
 
 							'is_enabled'  => array(

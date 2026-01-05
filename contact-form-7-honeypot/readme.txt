@@ -1,8 +1,8 @@
 === CF7 Apps – [Honeypot and hCAPTCHA for Contact Form 7] ===
 Tags: anti-spam, spam protection, captcha, honeypot, cf7 database
 Requires at least: 4.8
-Tested up to: 6.8
-Stable tag: 3.3.0
+Tested up to: 6.9
+Stable tag: 3.3.2
 Requires PHP: 5.6
 Contributors: wpexpertsio
 License: GPLv2 or later
@@ -42,6 +42,18 @@ Our **Honeypot Contact Form 7 extension** creates a hidden field inside your Con
 🌟 **Add hCaptcha to Contact Form 7**
 
 Protect your forms from spam bots using **hCaptcha,** a privacy-friendly alternative to Google reCAPTCHA. This extension integrates directly with CF7 and works instantly after setup. No coding is required, and no extra plugins are needed. Just set up your site keys and you're done.
+
+🌟 **Manage & View Contact Form 7 Entries**
+
+Store, view, and manage all your Contact Form 7 submissions directly inside your WordPress dashboard. This extension logs every form entry automatically, giving you an organized record of user submissions. No coding or third-party tools required just activate and start tracking instantly.
+
+🌟 **Redirect Users After Form Submission**
+
+Easily redirect users to any internal or external page after submitting a form. This extension lets you control the post-submission experience with custom URLs, thank-you pages, or marketing funnels. No coding needed configure your redirect URL and it works immediately.
+
+🌟 **Send Form Data via Webhooks**
+
+Automatically forward your Contact Form 7 submission data to any external service using **webhooks.**This extension enables seamless API integrations, automation workflows, and third-party connections. No additional plugins or coding required just add your webhook URL and you’re ready to go.
 
 **NOTE:**
 The best thing is that both features work independently. You can run them alone or together based on your site’s needs.
@@ -145,7 +157,17 @@ CF7 Apps is a third-party plugin and is not officially associated with or endors
 
 == Changelog ==
 
-= 3.3.0 – Decmber 10 2025 =
+= 3.3.2 - Jan 05, 2026 =
+* IMPROVEMENT - CF7 Apps were not visible on individual forms during form creation.
+* IMPROVEMENT - Added Roadmap and Documentation icons to the CF7 Apps dashboard header.
+* IMPROVEMENT - Added a "Spam Stopped" count message in the new Settings section.
+* FIX - Dropdown improvement in Entries.
+* FIX - CF7 entries were not displaying when using the Plain permalink structure.
+
+= 3.3.1 - December 11, 2025 =
+* IMPROVEMENT: Updated the Webhook App Card Description.
+
+= 3.3.0 – December 10 2025 =
 * NEW: Introduced the Webhook App.
 * IMPROVEMENT: Added the enable toggle on individual form settings.
 * IMPROVEMENT: Added compatibility for Global and Individial settings.

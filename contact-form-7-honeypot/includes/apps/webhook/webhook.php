@@ -27,7 +27,7 @@ if ( ! class_exists( 'CF7Apps_Webhook' ) && class_exists( 'CF7Apps_App' ) ) :
             $this->id                    = 'webhook';
             $this->priority              = 2;
             $this->title                 = __( 'Webhook', 'cf7apps' );
-            $this->description           = __( 'Add hCaptcha to Contact Form 7 for secure, spam-free forms.', 'cf7apps' );
+            $this->description           = __( 'Send Contact Form 7 data to third-party apps instantly using webhook endpoints.', 'cf7apps' );
             $this->icon                  = plugin_dir_url( __FILE__ ) . 'assets/images/logo.png';
             $this->has_admin_settings    = true;
             $this->is_pro                = false;
@@ -51,7 +51,7 @@ if ( ! class_exists( 'CF7Apps_Webhook' ) && class_exists( 'CF7Apps_App' ) ) :
                         'notice' => array(
                             'type'  => 'notice',
                             'class' => 'info',
-                            'text'  => sprintf( __( 'Stuck? Check our Documentation on %s', 'cf7apps' ), '<a href="https://cf7apps.com/docs/integration/webhook"><u>' . __( 'Webhook', 'cf7apps' ) . '</u></a>' ),
+                            'text'  => sprintf( __( 'Stuck? Check our Documentation on %s', 'cf7apps' ), '<a href="https://cf7apps.com/docs/integration/webhook" target="_blank"><u>' . __( 'Webhook', 'cf7apps' ) . '</u></a>' ),
                         ),
 
                         'is_enabled' => array(
@@ -164,7 +164,7 @@ if ( ! class_exists( 'CF7Apps_Webhook' ) && class_exists( 'CF7Apps_App' ) ) :
             $settings['general']['fields']['notice'] = array(
                 'type'  => 'notice',
                 'class' => 'info',
-                'text'  => sprintf( __( 'Stuck? Check our Documentation on %s', 'cf7apps' ), '<a href="https://cf7apps.com/docs/integration/webhook"><u>' . __( 'Webhook', 'cf7apps' ) . '</u></a>' ),
+                'text'  => sprintf( __( 'Stuck? Check our Documentation on %s', 'cf7apps' ), '<a href="https://cf7apps.com/docs/integration/webhook" target="_blank"><u>' . __( 'Webhook', 'cf7apps' ) . '</u></a>' ),
             );
 
 
